@@ -4,23 +4,29 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>Angular Book List</title>
     <link rel="stylesheet" href="dist/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="dist/bootstrap/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="styles/style.css">
     <link rel="author" href="humans.txt">
+    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
   </head>
   <body ng-app="bookApp">
     <div ng-controller="bookCtrl">
-      
       <header id="page-head">
         <h1>{{title}}</h1>
       </header>
       <main id="wrapper">
-        
+<!-- Insert a book here         -->
+        <div ng-repeat="book in books">
+          <h3>{{book.title}}</h2>
+          <h4>${{book.price | number:2}}</h4>
+          <h5>{{book.type}}</h5>
+        </div>
       </main>
       <footer id="page-foot">
-        <p>&copy; 2016 leafBRANCH</p>
+        <p>&copy; 2016 BookPoop</p>
       </footer>
     </div>
     <script src="dist/js/jquery.min.js"></script>
